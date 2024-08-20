@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Blend for Visual Studio Version 17
+VisualStudioVersion = 17.10.35122.118
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TillSaleScreenTest", "TillSaleScreenTest.csproj", "{B6058CC5-C5CD-4441-A77C-24DC7BDF3E4D}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{B6058CC5-C5CD-4441-A77C-24DC7BDF3E4D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B6058CC5-C5CD-4441-A77C-24DC7BDF3E4D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B6058CC5-C5CD-4441-A77C-24DC7BDF3E4D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B6058CC5-C5CD-4441-A77C-24DC7BDF3E4D}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {2D4EEE34-54A3-4A36-A36B-E7EF26B5F0CB}
+	EndGlobalSection
+EndGlobal
