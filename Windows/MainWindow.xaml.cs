@@ -219,6 +219,7 @@ namespace TillSaleScreenTest
 
         private void btnAdd_Click(object sender, RoutedEventArgs e)
         {
+            total = 0;
             string strAmount;
             int amount;
 

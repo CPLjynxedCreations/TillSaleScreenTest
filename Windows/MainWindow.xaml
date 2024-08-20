@@ -8,14 +8,49 @@
         Title="MainWindow" Height="450" Width="800"
         WindowStartupLocation="CenterScreen">
     <Grid>
-        <Button x:Name="btnButton" Content="Pizza" Width="100" Height="100" Margin="500,20,0,0" HorizontalAlignment="Left" VerticalAlignment="Top" Click="btnButton_Click"/>
-        <Button x:Name="btnButton2" Content="Pie" Width="100" Height="100" Margin="650,20,0,0" HorizontalAlignment="Left" VerticalAlignment="Top" Click="btnButton_Click"/>
-        <Button x:Name="btnAdd" Content="Add" Width="100" Height="100" Margin="0,304,0,0" HorizontalAlignment="Center" VerticalAlignment="Top" Click="btnAdd_Click"/>
-        <StackPanel x:Name="stackThem2" HorizontalAlignment="Left" Height="245" Margin="480,159,0,0" VerticalAlignment="Top" Width="300">
+        <Button x:Name="btnButton"
+                Content="Pizza"
+                Width="100"
+                Height="100"
+                Margin="20,20,0,0"
+                HorizontalAlignment="Left"
+                VerticalAlignment="Top"
+                Click="btnButton_Click"/>
+        <Button x:Name="btnButton2" 
+                Content="Pie"
+                Width="100"
+                Height="100"
+                Margin="20,130,0,0"
+                HorizontalAlignment="Left"
+                VerticalAlignment="Top"
+                Click="btnButton_Click"/>
+        <Button x:Name="btnAdd"
+                Content="Add"
+                Width="100"
+                Height="100"
+                Margin="20,240,0,0"
+                HorizontalAlignment="Left"
+                VerticalAlignment="Top" Click="btnAdd_Click"/>
+        <StackPanel x:Name="stackThem2"
+                    HorizontalAlignment="Left"
+                    Height="245"
+                    Margin="150,20,0,0"
+                    VerticalAlignment="Top"
+                    Width="300">
         </StackPanel>
-        <StackPanel x:Name="stackThem1" HorizontalAlignment="Left" Height="245" Margin="480,159,0,0" VerticalAlignment="Top" Width="100">
+        <StackPanel x:Name="stackThem1"
+                    HorizontalAlignment="Left"
+                    Height="245"
+                    Width="100"
+                    Margin="150,20,0,0"
+                    VerticalAlignment="Top">
         </StackPanel>
-        <StackPanel x:Name="stackThem3" HorizontalAlignment="Left" Height="245" Margin="680,159,0,0" VerticalAlignment="Top" Width="100">
+        <StackPanel x:Name="stackThem3"
+                    Height="245"
+                    Width="100"
+                    Margin="350,20,0,0"
+                    HorizontalAlignment="Left"
+                    VerticalAlignment="Top">
         </StackPanel>
     </Grid>
 </Window>
