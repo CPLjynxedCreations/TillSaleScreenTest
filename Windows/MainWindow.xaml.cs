@@ -66,6 +66,7 @@ namespace TillSaleScreenTest
 
 
             bool notFound = false;
+            // check but not needed
             int setItem = 0;
 
             if (count > 0)
