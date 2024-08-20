@@ -16,11 +16,15 @@ namespace TillSaleScreenTest
 
     public partial class MainWindow : Window
     {
+        // will read from excel
         public string newPrice = "40";
 
-        //added for stackpanel
         private int total = 0;
         private int count = 0;
+        private int position = 0;
+
+        private string getAmountLabel;
+        private string getPriceLabel;
 
         public MainWindow()
         {
@@ -29,14 +33,9 @@ namespace TillSaleScreenTest
 
         private void btnButton_Click(object sender, RoutedEventArgs e)
         {
-
-            //added new button to stackpanel
-            //int count = 0;//stackThem2.Children.Count;
-            //var btnName = "btn" + count;
             var btnName = "btn";
-            //var btnString;
-            var txtAmount = "txtAmount";// + count;
-            var txtPrice = "txtPrice";// + count;
+            var txtAmount = "txtAmount";
+            var txtPrice = "txtPrice";
 
             TextBlock block1 = new TextBlock();
             block1.Text = "1";
@@ -66,31 +65,24 @@ namespace TillSaleScreenTest
 
 
 
-            //ToggleButton toggleBut = (ToggleButton)sender;
             bool notFound = false;
-            int position = 0;
-            string getAmountLabel;
-            string getPriceLabel;
             int setItem = 0;
 
             if (count > 0)
             {
                 for (int i = 0; i <= count; i++)
                 {
-                    Debug.WriteLine(count);
                     foreach (UIElement item in stackThem2.Children)
                     {
                         if (item.GetType() == typeof(ToggleButton))
                         {
                             ToggleButton tglBut = (ToggleButton)item;
-                            if (tglBut.Content == btnString)
+                            if (btnString == tglBut.Content)
                             {
                                 position = stackThem2.Children.IndexOf(tglBut);
-                                //runs through the loop and keeps running adding extra
-                                //something to do with naming
-                                getPriceLabel = "txtPrice" + position;
                                 getAmountLabel = "txtAmount" + position;
-                                Debug.WriteLine(getAmountLabel);
+                                getPriceLabel = "txtPrice" + position;
+                                btnString = null;
                                 foreach (UIElement label in stackThem3.Children)
                                 {
                                     if (label.GetType() == typeof(TextBlock))
@@ -98,7 +90,6 @@ namespace TillSaleScreenTest
                                         TextBlock txtPriceLbl = (TextBlock)label;
                                         if (txtPriceLbl.Name == getPriceLabel)
                                         {
-                                            Debug.WriteLine("were in " + getAmountLabel);
                                             string strLinePrice = txtPriceLbl.Text;
                                             int intLinePrice = Convert.ToInt32(strLinePrice);
                                             intLinePrice = intLinePrice + Convert.ToInt32(newPrice);
@@ -125,7 +116,7 @@ namespace TillSaleScreenTest
                                     }
                                 }
                                 notFound = false;
-                                break;
+                                return;
                             }
                             else
                             {
@@ -145,7 +136,7 @@ namespace TillSaleScreenTest
                     stackThem3.Children.Add(block2);
                     count = count + 1;
                     notFound = false;
-                    //return;
+                    return;
                 }
             }
             else
@@ -158,15 +149,7 @@ namespace TillSaleScreenTest
                 stackThem3.Children.Add(block2);
                 count = count + 1;
             }
-            /*
-            //set location of new window
-            PopWindow popWindow = new PopWindow();
-            popWindow.WindowStyle = WindowStyle.None;
-            popWindow.WindowStartupLocation = WindowStartupLocation.Manual;
-            popWindow.Left = 900;
-            popWindow.Top = 600;
-            popWindow.Show();
-            */
+
         }
         private void btnRemove_Checked(object sender, RoutedEventArgs e)
         {
@@ -175,7 +158,6 @@ namespace TillSaleScreenTest
             bool deleted = false;
             for (int i = 0; i <= count; i++)
             {
-                //string name = "btn" + i;
                 foreach (UIElement item in stackThem2.Children)
                 {
                     if (!deleted)
@@ -183,7 +165,6 @@ namespace TillSaleScreenTest
 
                         if (item.GetType() == typeof(ToggleButton))
                         {
-                            //ToggleButton tglBut = (ToggleButton)item;
                             if (toggleBut.Name == name)
                             {
                                 stackThem2.Children.RemoveAt(i);
@@ -203,7 +184,6 @@ namespace TillSaleScreenTest
                 var btnName = "btn";
                 var blockName1 = "txtAmount";
                 var blockName2 = "txtPrice";
-                //ToggleButton tglBut = new ToggleButton();
                 foreach (UIElement item in stackThem2.Children)
                 {
                     if (item.GetType() == typeof(ToggleButton))
@@ -214,7 +194,6 @@ namespace TillSaleScreenTest
                             tglBut.Name = btnName + i;
 
                         }
-                        //if ()
                     }
                 }
                 foreach (UIElement item in stackThem1.Children)
@@ -227,7 +206,6 @@ namespace TillSaleScreenTest
                             txtblock.Name = blockName1 + i;
 
                         }
-                        //if ()
                     }
                 }
                 foreach (UIElement item in stackThem3.Children)
