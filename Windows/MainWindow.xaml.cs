@@ -26,6 +26,10 @@ namespace TillSaleScreenTest
         private string getAmountLabel;
         private string getPriceLabel;
 
+        private string btnNameText = "btn";
+        private string lblAmountText = "txtAmount";
+        private string lblPriceText = "txtPrice";
+
         public MainWindow()
         {
             InitializeComponent();
@@ -33,13 +37,9 @@ namespace TillSaleScreenTest
 
         private void btnButton_Click(object sender, RoutedEventArgs e)
         {
-            var btnName = "btn";
-            var txtAmount = "txtAmount";
-            var txtPrice = "txtPrice";
-
             TextBlock block1 = new TextBlock();
             block1.Text = "1";
-            block1.Name = txtAmount;
+            block1.Name = lblAmountText;
             block1.TextAlignment = TextAlignment.Center;
             block1.IsHitTestVisible = false;
             block1.Height = 20;
@@ -50,14 +50,14 @@ namespace TillSaleScreenTest
 
             ToggleButton btnAdd1 = new ToggleButton();
             btnAdd1.Content = btnString;
-            btnAdd1.Name = btnName;
+            btnAdd1.Name = btnNameText;
             btnAdd1.Checked += btnRemove_Checked;
             btnAdd1.BorderThickness = new Thickness(0);
             btnAdd1.Height = 20;
 
             TextBlock block2 = new TextBlock();
             block2.Text = newPrice;
-            block2.Name = txtPrice;
+            block2.Name = lblPriceText;
             block2.TextAlignment = TextAlignment.Center;
             block2.IsHitTestVisible = false;
             block2.Height = 20;
@@ -80,9 +80,8 @@ namespace TillSaleScreenTest
                             if (btnString == tglBut.Content)
                             {
                                 position = stackThem2.Children.IndexOf(tglBut);
-                                getAmountLabel = "txtAmount" + position;
-                                getPriceLabel = "txtPrice" + position;
-                                btnString = null;
+                                getAmountLabel = lblAmountText + position;
+                                getPriceLabel = lblPriceText + position;
                                 foreach (UIElement label in stackThem3.Children)
                                 {
                                     if (label.GetType() == typeof(TextBlock))
@@ -128,9 +127,9 @@ namespace TillSaleScreenTest
                 }
                 if (notFound)
                 {
-                    btnAdd1.Name = btnName + setItem;
-                    block1.Name = txtAmount + setItem;
-                    block2.Name = txtPrice + setItem;
+                    btnAdd1.Name = btnNameText + setItem;
+                    block1.Name = lblAmountText + setItem;
+                    block2.Name = lblPriceText + setItem;
                     stackThem1.Children.Add(block1);
                     stackThem2.Children.Add(btnAdd1);
                     stackThem3.Children.Add(block2);
@@ -141,9 +140,9 @@ namespace TillSaleScreenTest
             }
             else
             {
-                block1.Name = txtAmount + 0;
-                btnAdd1.Name = btnName + 0;
-                block2.Name = txtPrice + 0;
+                block1.Name = lblAmountText + 0;
+                btnAdd1.Name = btnNameText + 0;
+                block2.Name = lblPriceText + 0;
                 stackThem1.Children.Add(block1);
                 stackThem2.Children.Add(btnAdd1);
                 stackThem3.Children.Add(block2);
@@ -181,9 +180,6 @@ namespace TillSaleScreenTest
             }
             for (int i = 0; i <= count; i++)
             {
-                var btnName = "btn";
-                var blockName1 = "txtAmount";
-                var blockName2 = "txtPrice";
                 foreach (UIElement item in stackThem2.Children)
                 {
                     if (item.GetType() == typeof(ToggleButton))
@@ -191,8 +187,7 @@ namespace TillSaleScreenTest
                         ToggleButton tglBut = (ToggleButton)item;
                         if (stackThem2.Children.IndexOf(tglBut) == i)
                         {
-                            tglBut.Name = btnName + i;
-
+                            tglBut.Name = btnNameText + i;
                         }
                     }
                 }
@@ -203,7 +198,7 @@ namespace TillSaleScreenTest
                         TextBlock txtblock = (TextBlock)item;
                         if (stackThem1.Children.IndexOf(txtblock) == i)
                         {
-                            txtblock.Name = blockName1 + i;
+                            txtblock.Name = lblAmountText + i;
 
                         }
                     }
@@ -215,7 +210,7 @@ namespace TillSaleScreenTest
                         TextBlock txtblock = (TextBlock)item;
                         if (stackThem3.Children.IndexOf(txtblock) == i)
                         {
-                            txtblock.Name = blockName2 + i;
+                            txtblock.Name = lblPriceText + i;
                         }
                     }
                 }
@@ -227,10 +222,9 @@ namespace TillSaleScreenTest
             string strAmount;
             int amount;
 
-
             for (int i = 0; i <= count; i++)
             {
-                string name = "txtPrice" + i;
+                string name = lblPriceText + i;
                 foreach (UIElement item in stackThem3.Children)
                 {
                     if (item.GetType() == typeof(TextBlock))
