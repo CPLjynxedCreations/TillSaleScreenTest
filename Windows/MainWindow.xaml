@@ -79,5 +79,18 @@
                 BorderThickness="1,2,2,2"
                 BorderBrush="Orange"
                 Background="Transparent"/>
+        <ScrollViewer HorizontalAlignment="Left" Height="236" Margin="505,29,0,0" VerticalAlignment="Top" Width="260" BorderBrush="Transparent">
+            <StackPanel>
+                <Button Height="40"/>
+                <Button Height="40"/>
+                <Button Height="40"/>
+                <Button Height="40"/>
+                <Button Height="40"/>
+                <Button Height="40"/>
+                <Button Height="40"/>
+                <Button Height="40"/>
+                <Button Height="40"/>
+            </StackPanel>
+        </ScrollViewer>
     </Grid>
 </Window>
