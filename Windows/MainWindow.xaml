@@ -52,5 +52,32 @@
                     HorizontalAlignment="Left"
                     VerticalAlignment="Top">
         </StackPanel>
+        <Border x:Name="brdOne"
+                Height="245"
+                Width="100"
+                Margin="150,20,0,0"
+                HorizontalAlignment="Left"
+                VerticalAlignment="Top"
+                BorderThickness="2,2,1,2"
+                BorderBrush="Orange"
+                Background="Transparent"/>
+        <Border x:Name="brdTwo"
+                Height="245"
+                Width="100"
+                Margin="250,20,0,0"
+                HorizontalAlignment="Left"
+                VerticalAlignment="Top"
+                BorderThickness="1,2,1,2"
+                BorderBrush="Orange"
+                Background="Transparent"/>
+        <Border x:Name="brdThree"
+                Height="245"
+                Width="100"
+                Margin="350,20,0,0"
+                HorizontalAlignment="Left"
+                VerticalAlignment="Top"
+                BorderThickness="1,2,2,2"
+                BorderBrush="Orange"
+                Background="Transparent"/>
     </Grid>
 </Window>
